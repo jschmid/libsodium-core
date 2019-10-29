@@ -41,11 +41,11 @@ build_script:
   - ps: |
       if ($env:APPVEYOR_REPO_BRANCH -eq "master")
       {
-        msbuild /t:pack /p:Configuration=$env:CONFIGURATION;OutputPath=$env:APPVEYOR_BUILD_FOLDER\artifacts libsodium-core.sln
+        msbuild /t:pack /p:Configuration=$env:CONFIGURATION /p:OutputPath=$env:APPVEYOR_BUILD_FOLDER\artifacts libsodium-core.sln
       }
       else
       {
-        msbuild /t:pack /p:Configuration=$env:CONFIGURATION;OutputPath=$env:APPVEYOR_BUILD_FOLDER\artifacts;version-suffix=$env:VERSION_SUFFIX libsodium-core.sln
+        msbuild /t:pack /p:Configuration=$env:CONFIGURATION /p:OutputPath=$env:APPVEYOR_BUILD_FOLDER\artifacts /p:version-suffix=$env:VERSION_SUFFIX libsodium-core.sln
       }
 
 test: off
