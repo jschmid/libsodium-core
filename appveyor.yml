@@ -41,11 +41,22 @@ build_script:
   - ps: |
       if ($env:APPVEYOR_REPO_BRANCH -eq "master")
       {
-        msbuild /t:pack /p:Configuration=$env:CONFIGURATION /p:OutputPath=$env:APPVEYOR_BUILD_FOLDER\artifacts libsodium-core.sln
+        msbuild "src\Sodium.Core" /p:Configuration=$env:CONFIGURATION
       }
       else
       {
-        msbuild /t:pack /p:Configuration=$env:CONFIGURATION /p:OutputPath=$env:APPVEYOR_BUILD_FOLDER\artifacts /p:version-suffix=$env:VERSION_SUFFIX libsodium-core.sln
+        msbuild "src\Sodium.Core" /p:Configuration=$env:CONFIGURATION /p:version-suffix=$env:VERSION_SUFFIX
+      }
+
+after_build:
+  - ps: |
+      if ($env:APPVEYOR_REPO_BRANCH -eq "master")
+      {
+        msbuild /t:pack "src\Sodium.Core" /p:Configuration=$env:CONFIGURATION /p:OutputPath=$env:APPVEYOR_BUILD_FOLDER\artifacts /p:NoBuild=true /p:IncludeBuildOutput=false
+      }
+      else
+      {
+        msbuild /t:pack "src\Sodium.Core" /p:Configuration=$env:CONFIGURATION /p:OutputPath=$env:APPVEYOR_BUILD_FOLDER\artifacts /p:NoBuild=true /p:IncludeBuildOutput=false /p:version-suffix=$env:VERSION_SUFFIX
       }
 
 test: off
@@ -63,7 +74,7 @@ on_success:
   - codecov -f "%APPVEYOR_BUILD_FOLDER%\test\Sodium.Tests\coverage.xml"
 
 artifacts:
-  - path: artifacts\**\*.nupkg
+  - path: artifacts\**\*.*
 
 cache:
   - '%USERPROFILE%\.local'
