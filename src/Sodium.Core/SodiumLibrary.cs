@@ -9,10 +9,10 @@ namespace Sodium
   public static partial class SodiumLibrary
   {
 
-#if ANDROID
-    const string DllName = "libsodium";
-#else
+#if IOS
     const string DllName = "__Internal";
+#else
+    const string DllName = "libsodium";
 #endif
 
     //sodium_init
