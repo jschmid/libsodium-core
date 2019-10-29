@@ -63,7 +63,7 @@ on_success:
   - codecov -f "%APPVEYOR_BUILD_FOLDER%\test\Sodium.Tests\coverage.xml"
 
 artifacts:
-  - path: artifacts\**\*.*
+  - path: artifacts\**\*.nupkg
 
 cache:
   - '%USERPROFILE%\.local'
