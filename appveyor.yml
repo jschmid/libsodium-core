@@ -41,22 +41,11 @@ build_script:
   - ps: |
       if ($env:APPVEYOR_REPO_BRANCH -eq "master")
       {
-        dotnet build "src\Sodium.Core" -c $env:CONFIGURATION
+        msbuild /t:pack /p:Configuration=$env:CONFIGURATION;OutputPath=$env:APPVEYOR_BUILD_FOLDER\artifacts libsodium-core.sln
       }
       else
       {
-        dotnet build "src\Sodium.Core" -c $env:CONFIGURATION --version-suffix $env:VERSION_SUFFIX
-      }
-
-after_build:
-  - ps: |
-      if ($env:APPVEYOR_REPO_BRANCH -eq "master")
-      {
-        dotnet pack "src\Sodium.Core" -c $env:CONFIGURATION --no-build -o $env:APPVEYOR_BUILD_FOLDER\artifacts
-      }
-      else
-      {
-        dotnet pack "src\Sodium.Core" -c $env:CONFIGURATION --no-build --version-suffix $env:VERSION_SUFFIX -o $env:APPVEYOR_BUILD_FOLDER\artifacts
+        msbuild /t:pack /p:Configuration=$env:CONFIGURATION;OutputPath=$env:APPVEYOR_BUILD_FOLDER\artifacts;version-suffix=$env:VERSION_SUFFIX libsodium-core.sln
       }
 
 test: off
