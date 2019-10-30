@@ -85,7 +85,7 @@ deploy:
       branch:
         - master
         - nuget
-      appveyor_repo_tag: true
+      #appveyor_repo_tag: true
   - provider: GitHub
     description: "Release description"
     auth_token:
