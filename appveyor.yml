@@ -1,5 +1,5 @@
 environment:
-  PKG_VERSION: 1.2.0
+  PKG_VERSION: 0.0.1
   VERSION_SUFFIX: ""
 version: ${PKG_VERSION}-{build}
 configuration: Release
@@ -80,9 +80,11 @@ nuget:
 deploy:
   - provider: NuGet
     api_key:
-      secure: WcDqU36pLPvA+s5D4N0VEsi7AZGewvf4croE/D3rh3F+iqiztq9w5gHbrhgoTNS9
+      secure: DpOk2ayKFZZ36MwUmUZYc2IxEo0R3w4W6XqNtZPTE/HyMMb5ToZMLS/YQu/GByGo
     on:
-      branch: master
+      branch:
+        - master
+        - nuget
       appveyor_repo_tag: true
   - provider: GitHub
     description: "Release description"

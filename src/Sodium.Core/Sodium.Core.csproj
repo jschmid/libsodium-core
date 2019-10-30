@@ -2,21 +2,21 @@
 
   <PropertyGroup>
     <TargetFrameworks>MonoAndroid90;Xamarin.iOS10;netstandard1.6;netstandard2.0</TargetFrameworks>
-    <Description>libsodium for .net core</Description>
-    <Copyright>Copyright © tabrath 2017</Copyright>
-    <AssemblyTitle>Sodium.Xamarin</AssemblyTitle>
-    <VersionPrefix>1.2.0</VersionPrefix>
-    <Authors>tabrath</Authors>
+    <Description>libsodium for Xamarin</Description>
+    <Copyright>Copyright © jschmid 2010</Copyright>
+    <AssemblyTitle>Sodium.XamarinTest</AssemblyTitle>
+    <VersionPrefix>0.0.1</VersionPrefix>
+    <Authors>jschmid</Authors>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyName>Sodium.Xamarin</AssemblyName>
-    <PackageId>Sodium.Xamarin</PackageId>
+    <AssemblyName>Sodium.XamarinTest</AssemblyName>
+    <PackageId>Sodium.XamarinTest</PackageId>
     <PackageTags>libsodium</PackageTags>
     <PackageLicenseUrl>https://github.com/tabrath/libsodium-core/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/tabrath/libsodium-core/</RepositoryUrl>
+    <RepositoryUrl>https://github.com/jschmid/libsodium-core/</RepositoryUrl>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputType>Library</OutputType>
-    <PackageProjectUrl>https://github.com/tabrath/libsodium-core/</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/jschmid/libsodium-core/</PackageProjectUrl>
     <RootNamespace>Sodium</RootNamespace>
     <PackageIconUrl>http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Salt_shaker_on_white_background.jpg/220px-Salt_shaker_on_white_background.jpg</PackageIconUrl>
     <PreserveCompilationContext>true</PreserveCompilationContext>
