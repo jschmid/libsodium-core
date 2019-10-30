@@ -5,7 +5,7 @@
     <Description>libsodium for Xamarin</Description>
     <Copyright>Copyright © jschmid 2010</Copyright>
     <AssemblyTitle>Sodium.XamarinTest</AssemblyTitle>
-    <VersionPrefix>0.0.1</VersionPrefix>
+    <VersionPrefix>0.0.2</VersionPrefix>
     <Authors>jschmid</Authors>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AssemblyName>Sodium.XamarinTest</AssemblyName>
