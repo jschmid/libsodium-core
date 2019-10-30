@@ -1,5 +1,5 @@
 environment:
-  PKG_VERSION: 0.0.2
+  PKG_VERSION: 0.0.3
   VERSION_SUFFIX: ""
 version: ${PKG_VERSION}-{build}
 configuration: Release
@@ -80,7 +80,7 @@ nuget:
 deploy:
   - provider: NuGet
     api_key:
-      secure: DpOk2ayKFZZ36MwUmUZYc2IxEo0R3w4W6XqNtZPTE/HyMMb5ToZMLS/YQu/GByGo
+      secure: HS+AVSCmEzHGcITHZJsQVLXvDpkURCQ1YOzH9dw0yVS+hqP4EIBFFM/3VGb7UGbN
     on:
       branch:
         - master
